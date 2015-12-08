@@ -7,19 +7,21 @@ import Animation from 'kittik-animation-basic';
  * @version 1.0.0
  */
 export default class Print extends Animation {
-  _interval = 100;
-
   /**
    * Creates stream that ready for animate the chunks of control codes.
    *
    * @constructor
    * @param {Object} [options]
    * @param {Number} [options.interval] Interval in ms before typing another symbol
+   * @param {Boolean} [options.random] If true then interval is calculates randomly
    */
   constructor(options = {}) {
     super();
 
-    this.setInterval(options.interval);
+    let {interval, random} = options;
+
+    this.setInterval(interval);
+    this.setRandom(random);
   }
 
   /**
@@ -28,7 +30,7 @@ export default class Print extends Animation {
    * @returns {Number}
    */
   getInterval() {
-    return this._interval;
+    return this.get('interval');
   }
 
   /**
@@ -38,7 +40,27 @@ export default class Print extends Animation {
    * @returns {Print}
    */
   setInterval(interval = 100) {
-    this._interval = interval;
+    this.set('interval', interval);
+    return this;
+  }
+
+  /**
+   * Check if this animation should calculate interval randomly
+   *
+   * @returns {Boolean}
+   */
+  isRandom() {
+    return this.get('random');
+  }
+
+  /**
+   * Set random flag.
+   *
+   * @param {Boolean} isRandom
+   * @returns {Print}
+   */
+  setRandom(isRandom = true) {
+    this.set('random', isRandom);
     return this;
   }
 
@@ -50,6 +72,6 @@ export default class Print extends Animation {
    * @param {Function} cb
    */
   animate(chunk, cb) {
-    setTimeout(cb, this.getInterval(), chunk);
+    setTimeout(cb, this.isRandom() ? Math.random() * 500 + this.getInterval() : this.getInterval(), chunk);
   }
 }
