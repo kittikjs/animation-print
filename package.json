@@ -21,7 +21,7 @@
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
   "dependencies": {
-    "kittik-animation-basic": "2.0.0"
+    "kittik-animation-basic": "2.0.1"
   },
   "devDependencies": {
     "babel-cli": "6.4.0",
@@ -31,9 +31,11 @@
     "coveralls": "2.11.6",
     "cz-conventional-changelog": "1.1.5",
     "isparta": "4.0.0",
+    "kittik-cursor": "2.3.0",
+    "kittik-shape-rectangle": "1.1.0",
     "mocha": "2.3.4",
-    "sinon": "1.17.2",
-    "semantic-release": "4.3.5"
+    "semantic-release": "4.3.5",
+    "sinon": "1.17.2"
   },
   "config": {
     "commitizen": {
