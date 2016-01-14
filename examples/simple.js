@@ -1,7 +1,15 @@
 "use strict";
 
 const cursor = require('kittik-cursor').Cursor.create().resetTTY();
-const shape = require('kittik-shape-rectangle').default.create({text: 'Hello', x: 'center', background: 'white'});
 const Print = require('../lib/Print').default;
+const shape = require('kittik-shape-rectangle').default.create({
+  text: 'Good news, everybody!',
+  x: 'center',
+  background: 'white',
+  width: '50%'
+});
 
-new Print().on('tick', shape => shape.render(cursor) && cursor.flush().eraseScreen()).animate(shape);
+new Print({
+  easing: 'inOutSine',
+  duration: 5000
+}).on('tick', shape => shape.render(cursor) && cursor.flush().eraseScreen()).animate(shape);
