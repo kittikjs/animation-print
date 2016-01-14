@@ -1,7 +1,7 @@
 import Animation from 'kittik-animation-basic';
 
 /**
- * Print animation that simulates text typing or rendering the shape by symbols.
+ * Print animation that simulates text typing.
  *
  * @since 1.0.0
  */
