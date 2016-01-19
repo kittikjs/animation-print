@@ -1,11 +1,12 @@
 "use strict";
 
-const cursor = require('kittik-cursor').Cursor.create().resetTTY();
+const cursor = require('kittik-cursor').default.create().resetTTY();
 const Print = require('../lib/Print').default;
 const shape = require('kittik-shape-rectangle').default.create({
   text: 'Good news, everybody!',
   x: 'center',
-  background: 'white',
+  background: 'yellow_1',
+  foreground: 'black',
   width: '50%'
 });
 
