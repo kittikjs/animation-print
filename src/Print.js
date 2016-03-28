@@ -11,9 +11,8 @@ export default class Print extends Animation {
    *
    * @override
    * @param {Shape} shape
-   * @param {Cursor} cursor
    */
-  animate(shape, cursor) {
+  animate(shape) {
     return this.animateProperty({shape: shape, property: 'text', startValue: '', endValue: shape.getText()});
   }
 
@@ -24,8 +23,8 @@ export default class Print extends Animation {
    * @param {Object} options
    * @param {Object} options.shape Shape where property is need to be animated
    * @param {String} options.property Property name that need to be animated
-   * @param {Number} [options.startValue] Start value for animation, by default it takes from shape[property]
-   * @param {Number} [options.endValue] End value for animation, by default it takes from shape[property]
+   * @param {Number} options.startValue Start value for animation, by default it takes from shape[property]
+   * @param {Number} options.endValue End value for animation, by default it takes from shape[property]
    * @param {Number} [options.byValue] Step value for easing, by default it calculates automatically
    * @param {Number} [options.duration] Duration of the animation in ms, by default it takes from Animation options
    * @param {String} [options.easing] Easing that need to apply to animation, by default it takes from Animation options
@@ -43,7 +42,7 @@ export default class Print extends Animation {
     const start = Date.now();
     const end = start + duration;
     const tick = resolve => {
-      let currentTime = Date.now();
+      const currentTime = Date.now();
 
       if (currentTime > end) {
         resolve(shape);
