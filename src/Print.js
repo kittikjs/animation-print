@@ -41,8 +41,8 @@ export default class Print extends Animation {
    * @param {Object} options Options object
    * @param {Object} options.shape Shape where property is need to be animated
    * @param {String} options.property Property name that need to be animated
-   * @param {Number} options.startValue Start value for animation
-   * @param {Number} options.endValue End value for animation
+   * @param {String} options.startValue Start value for animation
+   * @param {String} options.endValue End value for animation
    * @param {Number} [options.byValue] Step value for easing, by default it calculates automatically
    * @param {Number} [options.duration] Duration of the animation in ms, by default it takes from Animation options
    * @param {String} [options.easing] Easing that need to apply to animation, by default it takes from Animation options
@@ -57,7 +57,7 @@ export default class Print extends Animation {
     const byValue = options.byValue || (endValue.length - startValue.length);
     const duration = options.duration || this.getDuration();
     const easing = options.easing || this.getEasing();
-    const delay = duration / (endValue - startValue);
+    const delay = duration / (endValue.length - startValue.length);
     const start = Date.now();
     const end = start + duration;
     const tick = resolve => {
