@@ -55,8 +55,8 @@ On each animation tick it calls [onTick](onTick) method with shape, property and
 | options | <code>Object</code> | Options object |
 | options.shape | <code>Object</code> | Shape where property is need to be animated |
 | options.property | <code>String</code> | Property name that need to be animated |
-| options.startValue | <code>Number</code> | Start value for animation |
-| options.endValue | <code>Number</code> | End value for animation |
+| options.startValue | <code>String</code> | Start value for animation |
+| options.endValue | <code>String</code> | End value for animation |
 | [options.byValue] | <code>Number</code> | Step value for easing, by default it calculates automatically |
 | [options.duration] | <code>Number</code> | Duration of the animation in ms, by default it takes from Animation options |
 | [options.easing] | <code>String</code> | Easing that need to apply to animation, by default it takes from Animation options |
