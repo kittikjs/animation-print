@@ -13,7 +13,11 @@
 ![dependencies](https://img.shields.io/david/kittikjs/animation-print.svg)
 ![dev dependencies](https://img.shields.io/david/dev/kittikjs/animation-print.svg)
 
-Print animation that simulates text typing
+Print animation that simulates text typing in Kittik shapes.
+
+| Examples |
+| -------- |
+| ![kittik](https://cloud.githubusercontent.com/assets/3625244/16447921/7ee264a4-3df7-11e6-8433-e66609d99ea4.gif) |
 
 ## Getting Started
 
@@ -35,6 +39,10 @@ const shape = Rectangle.create(cursor);
 
 Print.create().animate(shape).then(shape => doSmthElseWithShape(shape));
 ```
+
+## API
+
+API declaration is [here](./API.md).
 
 ## License
 
